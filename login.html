@@ -72,28 +72,8 @@
 </main>
 
 <script src="assets/js/main.js"></script>
-<script>
-  // Placeholder validation — will move to assets/js/auth.js in Phase 5,
-  // once this posts to the Django API instead of the browser.
-  document.getElementById("login-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    let valid = true;
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/auth.js"></script>
 
-    const emailGroup = document.getElementById("email-group");
-    const email = document.getElementById("email");
-    emailGroup.classList.toggle("field-error", !email.checkValidity());
-    if (!email.checkValidity()) valid = false;
-
-    const passGroup = document.getElementById("password-group");
-    const password = document.getElementById("password");
-    passGroup.classList.toggle("field-error", !password.checkValidity());
-    if (!password.checkValidity()) valid = false;
-
-    if (valid) {
-      // TODO Phase 5: replace with a real call, e.g. AuthAPI.login(email.value, password.value)
-      alert("Login looks valid. This will call the real API once the backend is connected.");
-    }
-  });
-</script>
 </body>
 </html>

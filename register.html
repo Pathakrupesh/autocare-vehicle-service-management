@@ -94,39 +94,8 @@
 </main>
 
 <script src="assets/js/main.js"></script>
-<script>
-  // Placeholder validation — will move to assets/js/auth.js in Phase 5,
-  // once this posts to the Django API instead of the browser.
-  document.getElementById("register-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    let valid = true;
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/auth.js"></script>
 
-    function checkField(groupId, inputId) {
-      const group = document.getElementById(groupId);
-      const input = document.getElementById(inputId);
-      const isValid = input.checkValidity();
-      group.classList.toggle("field-error", !isValid);
-      if (!isValid) valid = false;
-    }
-
-    checkField("firstname-group", "firstname");
-    checkField("lastname-group", "lastname");
-    checkField("reg-email-group", "reg-email");
-    checkField("phone-group", "phone");
-    checkField("reg-password-group", "reg-password");
-
-    const password = document.getElementById("reg-password");
-    const confirm = document.getElementById("confirm-password");
-    const confirmGroup = document.getElementById("confirm-password-group");
-    const passwordsMatch = confirm.value.length > 0 && confirm.value === password.value;
-    confirmGroup.classList.toggle("field-error", !passwordsMatch);
-    if (!passwordsMatch) valid = false;
-
-    if (valid) {
-      // TODO Phase 5: replace with a real call, e.g. AuthAPI.register({...})
-      alert("Registration looks valid. This will call the real API once the backend is connected.");
-    }
-  });
-</script>
 </body>
 </html>

@@ -1,97 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice #INV-2026-089 - AutoCare</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice — AutoCare</title>
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body class="bg-white">
-<div class="container my-5 p-4 border rounded">
-    <div class="d-flex justify-content-between align-items-center mb-4 no-print">
-        <a href="invoices.html" class="btn btn-outline-secondary">&larr; Back to Invoices</a>
-        <button onclick="window.print()" class="btn btn-primary">Print Invoice</button>
+<body>
+
+<div class="dashboard-shell">
+  <aside class="dash-sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark">A</span>
+      AutoCare
+    </a>
+    <p class="dash-nav-label">Menu</p>
+    <nav class="dash-nav">
+      <a href="dashboard.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></span>Dashboard</a>
+      <a href="vehicles.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4Z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></span>My Vehicles</a>
+      <a href="book_service.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M12 14v6M9 17h6"/></svg></span>Book Service</a>
+      <a href="booking.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span>My Bookings</a>
+      <a href="service_history.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 3h6"/></svg></span>Service History</a>
+      <a href="maintenance.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-.6-.6-2 2.8-2.8Z"/></svg></span>Maintenance</a>
+      <a href="invoices.html" class="active"><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2Z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></span>Invoices</a>
+      <a href="notofocations.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>Notifications</a>
+      <a href="profile.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>Profile</a>
+    </nav>
+    <div class="dash-sidebar-foot">
+      <a href="../login.html" style="color:#E7999B;"><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></span>Log out</a>
     </div>
-
-    <!-- Printable Header -->
-    <div class="row mb-4">
-        <div class="col-6">
-            <h3 class="fw-bold text-primary">AutoCare Ltd.</h3>
-            <p class="mb-0">Kathmandu Workshop Hub, Bagmati, Nepal</p>
-            <p class="mb-0">PAN/VAT: 600123456 | Contact: +977 01-4400000</p>
-        </div>
-        <div class="col-6 text-end">
-            <h4 class="fw-bold">TAX INVOICE</h4>
-            <p class="mb-0"><strong>Invoice No:</strong> INV-2026-089</p>
-            <p class="mb-0"><strong>Date:</strong> 02 Aug 2026</p>
-            <p class="mb-0"><strong>Payment Status:</strong> <span class="badge bg-success">PAID</span></p>
-        </div>
+  </aside>
+  <div class="dash-sidebar-overlay" data-sidebar-overlay></div>
+  <div class="dash-main">
+  <header class="dash-topbar">
+    <div class="dash-topbar-left">
+      <button class="dash-menu-toggle" data-sidebar-toggle aria-label="Toggle menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <h1>Invoice</h1>
     </div>
-
-    <hr>
-
-    <!-- Client & Vehicle Details -->
-    <div class="row my-4">
-        <div class="col-6">
-            <h6 class="fw-bold text-muted">BILLED TO:</h6>
-            <p class="mb-0"><strong>Suman Thapa</strong></p>
-            <p class="mb-0">Phone: +977 9841000000</p>
-            <p class="mb-0">Email: suman@example.com</p>
-        </div>
-        <div class="col-6 text-end">
-            <h6 class="fw-bold text-muted">VEHICLE DETAILS:</h6>
-            <p class="mb-0"><strong>Yamaha MT-15</strong></p>
-            <p class="mb-0">Reg No: BA 98 PA 1234</p>
-            <p class="mb-0">Odometer: 12,100 km</p>
-        </div>
+    <div class="dash-user">
+      <button class="dash-user-btn" data-user-menu-toggle>
+        <span class="dash-avatar">ST</span>
+        <span>
+          <span class="dash-user-name">Suman Thapa</span>
+          <span class="dash-user-role">Customer</span>
+        </span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="dash-dropdown" data-user-menu>
+        <a href="profile.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> &nbsp;Profile settings</a>
+        <a href="notofocations.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg> &nbsp;Notifications</a>
+        <hr>
+        <a href="../login.html" class="danger"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg> &nbsp;Log out</a>
+      </div>
     </div>
+  </header>
+    <main class="dash-content">
+      <div class="breadcrumb no-print"><a href="invoices.html">Invoices</a> / <span id="invoice-id">Invoice</span></div>
 
-    <!-- Invoice Line Items Table -->
-    <div class="table-responsive my-4">
-        <table class="table table-bordered">
-            <thead class="table-light">
-                <tr>
-                    <th>Description</th>
-                    <th class="text-center">Qty</th>
-                    <th class="text-end">Unit Price (NPR)</th>
-                    <th class="text-end">Total (NPR)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Front Brake Pad Replacement (Part #BRK-PAD-09)</td>
-                    <td class="text-center">1</td>
-                    <td class="text-end">2,800.00</td>
-                    <td class="text-end">2,800.00</td>
-                </tr>
-                <tr>
-                    <td>Labor Charge (Brake Overhaul & Fluid Bleed)</td>
-                    <td class="text-center">1.5 hrs</td>
-                    <td class="text-end">800.00</td>
-                    <td class="text-end">1,200.00</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3" class="text-end">Subtotal:</th>
-                    <td class="text-end">Rs. 4,000.00</td>
-                </tr>
-                <tr>
-                    <th colspan="3" class="text-end">VAT (13%):</th>
-                    <td class="text-end">Rs. 520.00</td>
-                </tr>
-                <tr>
-                    <th colspan="3" class="text-end fs-5">Grand Total:</th>
-                    <td class="text-end fs-5 fw-bold text-primary">Rs. 4,520.00</td>
-                </tr>
-            </tfoot>
+      <div class="page-head no-print">
+        <h1 style="margin:0;">Invoice</h1>
+        <div class="page-head-actions">
+          <button onclick="window.print()" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 14H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2"/></svg> Print</button>
+        </div>
+      </div>
+
+      <div class="card" style="max-width:760px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:var(--space-5); padding-bottom:var(--space-5); border-bottom:1px solid var(--color-steel-line);">
+          <div>
+            <div class="brand" style="color:var(--color-ink); margin-bottom:var(--space-2);"><span class="brand-mark">A</span> AutoCare</div>
+            <p class="cell-muted" style="margin-bottom:2px;">Kathmandu Workshop Hub, Bagmati, Nepal</p>
+            <p class="cell-muted" style="margin-bottom:0;">PAN/VAT: 600123456 &middot; +977 01-4400000</p>
+          </div>
+          <div style="text-align:right;">
+            <h3 style="margin-bottom:var(--space-2);">Invoice <span id="invoice-id">—</span></h3>
+            <p style="margin-bottom:2px;">Date: <span id="invoice-date">—</span></p>
+            <span class="badge badge-pending" id="invoice-status">—</span>
+          </div>
+        </div>
+
+        <div class="form-row" style="margin-bottom:var(--space-5);">
+          <div>
+            <h4 style="margin-bottom:var(--space-2);">Billed to</h4>
+            <p style="margin-bottom:2px;" id="invoice-customer-name">—</p>
+            <p style="margin-bottom:2px;" id="invoice-customer-phone">—</p>
+            <p style="margin-bottom:0;" id="invoice-customer-email">—</p>
+          </div>
+          <div>
+            <h4 style="margin-bottom:var(--space-2);">Vehicle</h4>
+            <p style="margin-bottom:0;" id="invoice-vehicle">—</p>
+          </div>
+        </div>
+
+        <table class="data-table" style="border:1px solid var(--color-steel-line); border-radius:var(--radius-control);">
+          <thead><tr><th>Description</th><th style="text-align:center;">Qty</th><th style="text-align:right;">Rate</th><th style="text-align:right;">Amount</th></tr></thead>
+          <tbody id="invoice-items-tbody"><tr><td colspan="4" class="cell-muted">Loading…</td></tr></tbody>
         </table>
-    </div>
 
-    <div class="mt-5 pt-3 text-center border-top text-muted">
-        <small>Thank you for choosing AutoCare. Drive safely!</small>
-    </div>
+        <div style="display:flex; justify-content:flex-end; margin-top:var(--space-4);">
+          <div style="min-width:220px;">
+            <div class="info-row" style="border-bottom:none; font-size:var(--text-md);"><span>Total</span><span id="invoice-total" style="font-family:var(--font-display); font-weight:800;">—</span></div>
+          </div>
+        </div>
+
+        <p class="cell-muted" style="margin-top:var(--space-5); margin-bottom:0; font-size:var(--text-xs);">Thank you for servicing with AutoCare. This is a system-generated invoice.</p>
+      </div>
+
+    </main>
+  </div>
 </div>
+
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/customer.js"></script>
+
 </body>
 </html>

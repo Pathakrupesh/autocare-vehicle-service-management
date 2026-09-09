@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoices — AutoCare</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="dashboard-shell">
+  <aside class="dash-sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark">A</span>
+      AutoCare
+    </a>
+    <p class="dash-nav-label">Menu</p>
+    <nav class="dash-nav">
+      <a href="dashboard.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></span>Dashboard</a>
+      <a href="vehicles.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4Z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></span>My Vehicles</a>
+      <a href="book_service.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M12 14v6M9 17h6"/></svg></span>Book Service</a>
+      <a href="booking.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span>My Bookings</a>
+      <a href="service_history.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 3h6"/></svg></span>Service History</a>
+      <a href="maintenance.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-.6-.6-2 2.8-2.8Z"/></svg></span>Maintenance</a>
+      <a href="invoices.html" class="active"><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2Z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></span>Invoices</a>
+      <a href="notofocations.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>Notifications</a>
+      <a href="profile.html" class=""><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>Profile</a>
+    </nav>
+    <div class="dash-sidebar-foot">
+      <a href="../login.html" style="color:#E7999B;"><span class="dash-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></span>Log out</a>
+    </div>
+  </aside>
+  <div class="dash-sidebar-overlay" data-sidebar-overlay></div>
+  <div class="dash-main">
+  <header class="dash-topbar">
+    <div class="dash-topbar-left">
+      <button class="dash-menu-toggle" data-sidebar-toggle aria-label="Toggle menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <h1>Invoices</h1>
+    </div>
+    <div class="dash-user">
+      <button class="dash-user-btn" data-user-menu-toggle>
+        <span class="dash-avatar">ST</span>
+        <span>
+          <span class="dash-user-name">Suman Thapa</span>
+          <span class="dash-user-role">Customer</span>
+        </span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="dash-dropdown" data-user-menu>
+        <a href="profile.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> &nbsp;Profile settings</a>
+        <a href="notofocations.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg> &nbsp;Notifications</a>
+        <hr>
+        <a href="../login.html" class="danger"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg> &nbsp;Log out</a>
+      </div>
+    </div>
+  </header>
+    <main class="dash-content">
+      <div class="page-head"><div><h1>Invoices</h1><p>Every invoice issued for your services, paid and unpaid.</p></div></div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Invoice #</th><th>Date</th><th>Vehicle</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+          <tbody id="invoices-tbody"><tr><td colspan="6" class="cell-muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

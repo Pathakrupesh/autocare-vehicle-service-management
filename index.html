@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoCare — Vehicle Service &amp; Maintenance Management</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="navbar" data-navbar>
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">A</span>
+      AutoCare
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#services">Services</a>
+      <a href="#" >For garages</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">Log in</a>
+      <a href="register.html" class="btn btn-primary">Sign up</a>
+    </div>
+
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Know exactly what's happening with your vehicle's service</h1>
+        <p>Book a service, track the job while it's on the lift, and keep every invoice and service record in one place — instead of a stack of paper receipts in your glovebox.</p>
+
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-primary btn-lg">Book a service</a>
+          <a href="#how-it-works" class="btn btn-secondary btn-lg">See how it works</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>12,400+</strong>
+            <span>Services logged</span>
+          </div>
+          <div class="hero-stat">
+            <strong>340</strong>
+            <span>Verified mechanics</span>
+          </div>
+          <div class="hero-stat">
+            <strong>4.8 / 5</strong>
+            <span>Average customer rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="ticket-card">
+          <div class="ticket-head">
+            <div>
+              <div class="ticket-plate">BA 12 PA 3456</div>
+              <div class="ticket-sub">Honda Civic · 45,000 km</div>
+            </div>
+            <span class="badge badge-progress">In progress</span>
+          </div>
+
+          <div class="ticket-row"><span>Service type</span><strong>Full service</strong></div>
+          <div class="ticket-row"><span>Assigned mechanic</span><strong>Suresh T.</strong></div>
+          <div class="ticket-row"><span>Estimated completion</span><strong>Today, 4:30 PM</strong></div>
+          <div class="ticket-row"><span>Estimated cost</span><strong>Rs. 4,850</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <h2>From booking to pickup, in three steps</h2>
+        <p>No phone tag with the front desk to find out what's happening with your car.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Book a service</h3>
+          <p>Pick a service type, choose a slot, and add any notes for the mechanic — a strange noise, a warning light, anything.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>Track the job</h3>
+          <p>Watch the job move from inspection to service work to completion, with updates as the mechanic works through it.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>Review and pay</h3>
+          <p>Get an itemised invoice, review what was done, and pay online — then find it again anytime in your service history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature cards -->
+  <section class="section" id="services" style="background:var(--color-paper-raised);">
+    <div class="container">
+      <div class="section-head">
+        <h2>Everything a service centre and its customers need</h2>
+        <p>One system for the customer booking a service, the mechanic doing the work, and the admin keeping the garage running.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card card-feature">
+          <div class="card-icon">Rg</div>
+          <h3>Vehicle records</h3>
+          <p>Every vehicle's registration, mileage, and full service history in one place — no more digging through old receipts.</p>
+        </div>
+        <div class="card card-feature">
+          <div class="card-icon">Bk</div>
+          <h3>Easy booking</h3>
+          <p>Book a slot in minutes and get reminders before your next scheduled maintenance is due.</p>
+        </div>
+        <div class="card card-feature">
+          <div class="card-icon">Jb</div>
+          <h3>Live job tracking</h3>
+          <p>Mechanics log inspection notes and work done, so you always know the real status of the job.</p>
+        </div>
+        <div class="card card-feature">
+          <div class="card-icon">In</div>
+          <h3>Clear invoices</h3>
+          <p>Itemised parts and labour, sent the moment the job is complete — no surprises at pickup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom: var(--space-3); display:inline-flex;">
+          <span class="brand-mark">A</span> AutoCare
+        </a>
+        <p>Service and maintenance management for garages and the customers who trust them.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#how-it-works">How it works</a>
+        <a href="#services">Services</a>
+        <a href="register.html">Sign up</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Account</h4>
+        <a href="login.html">Log in</a>
+        <a href="register.html">Create account</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help centre</a>
+        <a href="#">Contact us</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> AutoCare. All rights reserved.</span>
+      <span>Kathmandu, Nepal</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+console.log("AutoCare frontend loaded successfully.");

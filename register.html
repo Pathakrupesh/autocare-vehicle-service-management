@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an account — AutoCare</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="navbar" data-navbar>
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">A</span>
+      AutoCare
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#services">Services</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">Log in</a>
+      <a href="register.html" class="btn btn-primary">Sign up</a>
+    </div>
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-head">
+      <h1>Create your account</h1>
+      <p>Add your vehicles and start booking services in a few minutes.</p>
+    </div>
+
+    <form id="register-form" novalidate>
+      <div class="form-row">
+        <div class="form-group" id="firstname-group">
+          <label class="form-label" for="firstname">First name</label>
+          <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Anish" required>
+          <p class="field-error-msg">Enter your first name.</p>
+        </div>
+        <div class="form-group" id="lastname-group">
+          <label class="form-label" for="lastname">Last name</label>
+          <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Shrestha" required>
+          <p class="field-error-msg">Enter your last name.</p>
+        </div>
+      </div>
+
+      <div class="form-group" id="reg-email-group">
+        <label class="form-label" for="reg-email">Email address</label>
+        <input class="form-control" type="email" id="reg-email" name="email" placeholder="you@example.com" required>
+        <p class="field-error-msg">Enter a valid email address.</p>
+      </div>
+
+      <div class="form-group" id="phone-group">
+        <label class="form-label" for="phone">Phone number</label>
+        <input class="form-control" type="tel" id="phone" name="phone" placeholder="98XXXXXXXX" pattern="[0-9]{10}" required>
+        <p class="field-error-msg">Enter a valid 10-digit phone number.</p>
+      </div>
+
+      <div class="form-group" id="reg-password-group">
+        <label class="form-label" for="reg-password">Password</label>
+        <div class="password-field">
+          <input class="form-control" type="password" id="reg-password" name="password" placeholder="At least 8 characters" required minlength="8">
+          <button type="button" class="password-toggle" data-password-toggle="reg-password" aria-label="Show password">Show</button>
+        </div>
+        <p class="field-error-msg">Password must be at least 8 characters.</p>
+      </div>
+
+      <div class="form-group" id="confirm-password-group">
+        <label class="form-label" for="confirm-password">Confirm password</label>
+        <input class="form-control" type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required minlength="8">
+        <p class="field-error-msg">Passwords do not match.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-row">
+          <input type="checkbox" name="terms" required>
+          I agree to the terms of service and privacy policy
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Create account</button>
+    </form>
+
+    <p class="auth-foot">
+      Already have an account? <a href="login.html">Log in</a>
+    </p>
+  </div>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Placeholder validation — will move to assets/js/auth.js in Phase 5,
+  // once this posts to the Django API instead of the browser.
+  document.getElementById("register-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let valid = true;
+
+    function checkField(groupId, inputId) {
+      const group = document.getElementById(groupId);
+      const input = document.getElementById(inputId);
+      const isValid = input.checkValidity();
+      group.classList.toggle("field-error", !isValid);
+      if (!isValid) valid = false;
+    }
+
+    checkField("firstname-group", "firstname");
+    checkField("lastname-group", "lastname");
+    checkField("reg-email-group", "reg-email");
+    checkField("phone-group", "phone");
+    checkField("reg-password-group", "reg-password");
+
+    const password = document.getElementById("reg-password");
+    const confirm = document.getElementById("confirm-password");
+    const confirmGroup = document.getElementById("confirm-password-group");
+    const passwordsMatch = confirm.value.length > 0 && confirm.value === password.value;
+    confirmGroup.classList.toggle("field-error", !passwordsMatch);
+    if (!passwordsMatch) valid = false;
+
+    if (valid) {
+      // TODO Phase 5: replace with a real call, e.g. AuthAPI.register({...})
+      alert("Registration looks valid. This will call the real API once the backend is connected.");
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — AutoCare</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="navbar" data-navbar>
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">A</span>
+      AutoCare
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#services">Services</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">Log in</a>
+      <a href="register.html" class="btn btn-primary">Sign up</a>
+    </div>
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-head">
+      <h1>Log in to AutoCare</h1>
+      <p>Enter your details to check on your bookings and service history.</p>
+    </div>
+
+    <form id="login-form" novalidate>
+      <div class="form-group" id="email-group">
+        <label class="form-label" for="email">Email address</label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="you@example.com" required>
+        <p class="field-error-msg">Enter a valid email address.</p>
+      </div>
+
+      <div class="form-group" id="password-group">
+        <label class="form-label" for="password">Password</label>
+        <div class="password-field">
+          <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+          <button type="button" class="password-toggle" data-password-toggle="password" aria-label="Show password">Show</button>
+        </div>
+        <p class="field-error-msg">Password must be at least 8 characters.</p>
+      </div>
+
+      <div class="form-group" style="display:flex; justify-content:space-between; align-items:center;">
+        <label class="checkbox-row">
+          <input type="checkbox" name="remember">
+          Keep me logged in
+        </label>
+        <a href="#" style="font-size: var(--text-sm);">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Log in</button>
+    </form>
+
+    <div class="auth-divider">or</div>
+
+    <p class="auth-foot" style="margin-bottom:0;">
+      Don't have an account? <a href="register.html">Create one</a>
+    </p>
+  </div>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Placeholder validation — will move to assets/js/auth.js in Phase 5,
+  // once this posts to the Django API instead of the browser.
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let valid = true;
+
+    const emailGroup = document.getElementById("email-group");
+    const email = document.getElementById("email");
+    emailGroup.classList.toggle("field-error", !email.checkValidity());
+    if (!email.checkValidity()) valid = false;
+
+    const passGroup = document.getElementById("password-group");
+    const password = document.getElementById("password");
+    passGroup.classList.toggle("field-error", !password.checkValidity());
+    if (!password.checkValidity()) valid = false;
+
+    if (valid) {
+      // TODO Phase 5: replace with a real call, e.g. AuthAPI.login(email.value, password.value)
+      alert("Login looks valid. This will call the real API once the backend is connected.");
+    }
+  });
+</script>
+</body>
+</html>

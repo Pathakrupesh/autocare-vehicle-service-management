@@ -1,0 +1,8 @@
+{
+  "name": "AutoCare — Vehicle Service & Maintenance Management",
+  "description": "AutoCare service and maintenance management application for garages, mechanics, and vehicle owners.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

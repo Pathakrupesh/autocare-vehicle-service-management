@@ -1,0 +1,14 @@
+{
+  "name": "autocare-vehicle-service-management",
+  "version": "1.0.0",
+  "description": "AutoCare — Vehicle Service & Maintenance Management",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Build successful'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

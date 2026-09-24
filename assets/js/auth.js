@@ -46,15 +46,37 @@
         e.preventDefault();
         const email = document.getElementById('email').value.trim().toLowerCase();
         const password = document.getElementById('password').value;
-        const user = getUsers().find(function (u) { return u.email.toLowerCase() === email && u.password === password; });
-        if (!user) {
-          if (window.showToast) showToast('Invalid email or password.', 'error'); else alert('Invalid email or password.');
-          return;
-        }
-        const remember = loginForm.elements.remember ? loginForm.elements.remember.checked : true;
-        setSession(user, remember);
-        if (window.showToast) showToast('Login successful.');
-        setTimeout(function () { redirectForRole(user.role); }, 250);
+
+        fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (result) {
+          if (!result.ok) {
+            if (window.showToast) showToast(result.data.error || 'Invalid email or password.', 'error'); else alert('Invalid email or password.');
+            return;
+          }
+          const user = result.data.user;
+          localStorage.setItem('autocare_token', result.data.token);
+          const remember = loginForm.elements.remember ? loginForm.elements.remember.checked : true;
+          setSession(user, remember);
+          if (window.showToast) showToast('Login successful.');
+          setTimeout(function () { redirectForRole(user.role); }, 250);
+        })
+        .catch(function () {
+          // Fallback to local store if server offline
+          const user = getUsers().find(function (u) { return u.email.toLowerCase() === email && u.password === password; });
+          if (!user) {
+            if (window.showToast) showToast('Invalid email or password.', 'error'); else alert('Invalid email or password.');
+            return;
+          }
+          const remember = loginForm.elements.remember ? loginForm.elements.remember.checked : true;
+          setSession(user, remember);
+          if (window.showToast) showToast('Login successful.');
+          setTimeout(function () { redirectForRole(user.role); }, 250);
+        });
       });
     }
 
@@ -71,25 +93,47 @@
         valid = valid && match;
         if (!valid) { registerForm.reportValidity(); return; }
 
-        const users = getUsers();
+        const name = document.getElementById('firstname').value.trim() + ' ' + document.getElementById('lastname').value.trim();
         const email = document.getElementById('reg-email').value.trim().toLowerCase();
-        if (users.some(function (u) { return u.email.toLowerCase() === email; })) {
-          if (window.showToast) showToast('An account with this email already exists.', 'error'); else alert('Email already exists.');
-          return;
-        }
-        const user = {
-          id: Store.nextId(users),
-          name: document.getElementById('firstname').value.trim() + ' ' + document.getElementById('lastname').value.trim(),
-          email: email,
-          phone: document.getElementById('phone').value.trim(),
-          password: password,
-          role: 'customer'
-        };
-        users.push(user);
-        Store.write('users', users);
-        setSession(user, true);
-        if (window.showToast) showToast('Account created successfully.');
-        setTimeout(function () { redirectForRole('customer'); }, 250);
+        const phone = document.getElementById('phone').value.trim();
+
+        fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, password })
+        })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (result) {
+          if (!result.ok) {
+            if (window.showToast) showToast(result.data.error || 'Registration failed.', 'error'); else alert(result.data.error || 'Registration failed.');
+            return;
+          }
+          const user = result.data.user;
+          localStorage.setItem('autocare_token', result.data.token);
+          setSession(user, true);
+          if (window.showToast) showToast('Account created successfully.');
+          setTimeout(function () { redirectForRole('customer'); }, 250);
+        })
+        .catch(function () {
+          const users = getUsers();
+          if (users.some(function (u) { return u.email.toLowerCase() === email; })) {
+            if (window.showToast) showToast('An account with this email already exists.', 'error'); else alert('Email already exists.');
+            return;
+          }
+          const user = {
+            id: Store.nextId(users),
+            name: name,
+            email: email,
+            phone: phone,
+            password: password,
+            role: 'customer'
+          };
+          users.push(user);
+          Store.write('users', users);
+          setSession(user, true);
+          if (window.showToast) showToast('Account created successfully.');
+          setTimeout(function () { redirectForRole('customer'); }, 250);
+        });
       });
     }
 
